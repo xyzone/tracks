@@ -5,7 +5,7 @@ const SignupScreen = ({ navigation }) => {
     return( 
         <View>
        <Text style={{fontSize: 48}}>
-           SignupScreen
+           SignupScreen test
         </Text>
         <Button title="Go to sigin" 
         onPress={() => {navigation.navigate('Signin')} } 

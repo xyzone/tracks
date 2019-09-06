@@ -9,19 +9,10 @@ const SignupScreen = ({ navigation }) => {
     const [password, setPassword] = useState('');
     const { state, signup } = useContext(AuthContext)
     
+    
+    
+    
     return( 
-<<<<<<< HEAD
-        <View>
-       <Text style={{fontSize: 48}}>
-           SignupScreen test
-        </Text>
-        <Button title="Go to sigin" 
-        onPress={() => {navigation.navigate('Signin')} } 
-        />
-         <Button title="Go to mainflow" 
-        onPress={() => {navigation.navigate('mainFlow')} } 
-        />
-=======
         <View style={styles.container}>
             <Spacer>
             <Text h3 >
@@ -48,7 +39,6 @@ const SignupScreen = ({ navigation }) => {
             />
             </Spacer>
           
->>>>>>> 2991a7ac150b2442ae4df20740627c715304dcf7
         </View>
     )  
 }

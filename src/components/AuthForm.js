@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { StyleSheet, View } from 'react-native'
 import Spacer  from '../components/Spacer'
 import { Text, Button, Input } from 'react-native-elements';
 
+import {Context as AuthContext} from '../context/AuthContext';
+import {NavigationEvents} from 'react-navigation'
 const AuthForm = ({ headerText, errorMessage, onSubmit, submitButtonText }) => {
+
+    const {state, clearErrorMessage} = useContext(AuthContext)
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState(''); 
+    <NavigationEvents 
+        onWillBlur={() => {clearErrorMessage() }} 
+    />
     return (
         <>
             <Spacer>

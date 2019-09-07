@@ -1,15 +1,21 @@
-import React, {useState, useContext } from 'react';
+import React, {useState, useContext, useEffect } from 'react';
 import { View, StyleSheet , TouchableOpacity } from 'react-native';
 import { Button, Text, Input } from 'react-native-elements';
 import Spacer  from '../components/Spacer'
 import {Context as AuthContext} from '../context/AuthContext';
 import AuthForm from '../components/AuthForm'
 import NavLink from '../components/NavLink'
+
 const SigninScreen = () => {
-    const { state, signin } = useContext(AuthContext)
-     
+    const { state, signin, clearErrorMessage, tryLocalSignin } = useContext(AuthContext)
+    useEffect(
+        () => {
+            tryLocalSignin();
+        }, []
+    )
     return( 
         <View style={styles.container}>
+           
             <AuthForm
                 headerText="Sign in for tracker"
                 errorMessage={state.errorMessage}

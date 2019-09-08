@@ -7,9 +7,7 @@ import AuthForm from '../components/AuthForm'
 import NavLink from '../components/NavLink'
 const SignupScreen = ({ navigation }) => { 
     const { state, signup, tryLocalSignin } = useContext(AuthContext)
-     useEffect(() => {
-         tryLocalSignin();
-     })
+      
     return( 
         <View style={styles.container}>
             <AuthForm

@@ -13,9 +13,10 @@ const startWatching = async() => {
         await requestPermissionsAsync();
         const sub = await watchPositionAsync({
             accuracy: Accuracy.BestForNavigation,
-            timeInterval: 1000, //1 second,
+            timeInterval: 3000, //1 second,
             distanceInterval: 10, //10 meters
         }, callback)
+
         setSubscriber(sub)
     }catch(e){
         setErr(e)
@@ -26,7 +27,6 @@ const startWatching = async() => {
 useEffect(
    () => {
     if (shouldTrack){
-
         startWatching()
     }   else {
         subscriber.remove();
@@ -34,7 +34,7 @@ useEffect(
     }
 
 }
-, [shouldTrack])
+, [shouldTrack, callback])
 
 return [err]
 }
